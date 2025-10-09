@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Total Engenies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Imagen de fondo adaptativa */
+      .hero-bg {
+        background-image: url('./img/banner-horizontal.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero-bg {
+          background-image: url('./img/banner-vertical.jpg');
+        }
+      }
+
+      /* Animaciones */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800">
+    <!-- HERO -->
+    <section
+      id="inicio"
+      class="relative hero-bg min-h-screen flex flex-col justify-center items-center text-center text-white"
+    >
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 fade-up space-y-6 px-4">
+        <img
+          src="./img/logo.png"
+          alt="Service Total Engenies"
+          class="mx-auto w-40 md:w-52 drop-shadow-lg"
+        />
+        <h1 class="text-3xl md:text-5xl font-bold">
+          Expertos en mantenimiento automotor
+        </h1>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a
+            href="https://wa.me/5493410000000?text=Hola%20quiero%20consultar%20por%20un%20service"
+            target="_blank"
+            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105"
+          >
+            Consultar por WhatsApp
+          </a>
+          <a
+            href="https://calendly.com/tucuenta/calendario"
+            target="_blank"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105"
+          >
+            Agendar turno
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-16 bg-gray-100">
+      <div class="max-w-6xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold mb-10 text-gray-800">Nuestros servicios</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-2 fade-up"
+          >
+            <div class="text-4xl mb-4">🛢️</div>
+            <h3 class="text-xl font-semibold mb-2">Cambio de aceite</h3>
+            <p class="text-gray-600">Mantené tu motor en óptimas condiciones.</p>
+          </div>
+          <div
+            class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-2 fade-up"
+          >
+            <div class="text-4xl mb-4">🔧</div>
+            <h3 class="text-xl font-semibold mb-2">Control de frenos</h3>
+            <p class="text-gray-600">Revisamos el sistema para tu seguridad.</p>
+          </div>
+          <div
+            class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-2 fade-up"
+          >
+            <div class="text-4xl mb-4">🚗</div>
+            <h3 class="text-xl font-semibold mb-2">Revisión general</h3>
+            <p class="text-gray-600">
+              Inspección completa para evitar sorpresas en el camino.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition transform hover:-translate-y-2 fade-up"
+          >
+            <div class="text-4xl mb-4">⚙️</div>
+            <h3 class="text-xl font-semibold mb-2">Diagnóstico electrónico</h3>
+            <p class="text-gray-600">
+              Analizamos y resolvemos fallas con tecnología avanzada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="py-16">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ubicación y horarios</h2>
+        <p class="text-gray-700 mb-8">
+          Av. San Martín 123, Paraná, Entre Ríos  
+          <br />
+          Lunes a Sábado de 8:00 a 18:00 hs
+        </p>
+        <iframe
+          class="w-full h-64 rounded-2xl shadow-md"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.985891846328!2d-58.38155968477372!3d-34.60368498045985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334c1e3d4b3bb%3A0x4e8f61c36d48b82a!2sBuenos%20Aires!5e0!3m2!1ses!2sar!4v1616021837640!5m2!1ses!2sar"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-16 bg-gray-100">
+      <div class="max-w-6xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold mb-8">Contacto y redes</h2>
+        <p class="text-gray-700 mb-4">📞 Tel: (0343) 400-0000</p>
+        <p class="text-gray-700 mb-4">
+          📧 Email: servicetotalengenies@gmail.com
+        </p>
+        <div class="flex justify-center gap-6 mt-6">
+          <a
+            href="https://wa.me/5493410000000"
+            target="_blank"
+            class="text-green-600 text-3xl hover:scale-110 transition"
+            >💬</a
+          >
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="text-pink-600 text-3xl hover:scale-110 transition"
+            >📷</a
+          >
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="text-blue-600 text-3xl hover:scale-110 transition"
+            >📘</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+      <p class="text-sm">
+        © 2025 Service Total Engenies | Desarrollado por
+        <span class="text-amber-400 font-semibold">Impulsar</span>
+      </p>
+    </footer>
+  </body>
+</html>
