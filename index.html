@@ -65,9 +65,9 @@
         </p>
 
         <div class="flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="450">
-          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Batería</a>
-          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Cambio de aceite</a>
-          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Frenos</a>
+          <a href="#turno-calendly" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Batería</a>
+          <a href="#turno-calendly" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Cambio de aceite</a>
+          <a href="#turno-calendly" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Frenos</a>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
           <li class="flex items-start gap-3"><span class="text-[#f29101] mt-1">✔</span> Seguimiento del traslado en tiempo real.</li>
           <li class="flex items-start gap-3"><span class="text-[#f29101] mt-1">✔</span> Comunicación directa y transparente.</li>
         </ul>
-        <a href="#turnos" class="inline-block bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold mt-6 transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Solicitá tu turno</a>
+        <a href="#turnos-calendly" class="inline-block bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold mt-6 transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Solicitá tu turno</a>
       </div>
     </div>
   </section>
@@ -148,8 +148,26 @@
     </div>
   </section>
 
+<section id="turno-calendly" class="py-24 bg-gray-50">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold mb-8 text-gray-800">Agenda tu turno</h2>
+    <p class="text-lg text-gray-700 mb-12">
+      Elegí el día y horario que más te convenga.
+    </p>
+
+    <!-- Widget de Calendly -->
+    <div class="calendly-inline-widget mx-auto rounded-2xl shadow-lg" 
+         data-url="https://calendly.com/z-norte-servigo/servicio-bateria?primary_color=f29101" 
+         style="min-width:320px;height:700px;"></div>
+  </div>
+</section>
+
+<!-- Script Calendly -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+
   <!-- 📅 TURNOS -->
-  <section id="turnos" class="py-24 bg-white">
+  <!-- <section id="turnos" class="py-24 bg-white">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold text-[#f29101] mb-10">Reservá tu turno con Servigo</h2>
       <p class="text-lg text-[#565656]/80 mb-12">Elegí el servicio que necesitás y coordiná tu traslado en minutos.</p>
@@ -159,7 +177,7 @@
         <a href="#" class="bg-[#f29101] text-white px-8 py-4 rounded-lg font-semibold shadow-md hover:bg-[#d88000] hover:scale-105 transition-all duration-300">Frenos</a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ⚫ FOOTER -->
   <footer class="bg-[#565656] text-white py-8 text-center text-sm">
