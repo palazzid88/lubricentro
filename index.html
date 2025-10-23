@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traslado de Vehículos</title>
+  <title>Servigo – Traslado de Vehículos</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       AOS.init({
-        duration: 800,
+        duration: 900,
         once: true,
         easing: "ease-in-out",
       });
@@ -23,445 +23,150 @@
   </script>
 
   <style>
-html {
-    scroll-behavior: smooth;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* Evita desplazamiento horizontal y corrige bug del zoom o AOS */
-  body, html {
-    overflow-x: hidden;
-    width: 100%;
-  }
+    body, html {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
-  /* Corrige posibles expansiones del banner animado */
-  header img {
-    display: block;
-    width: 100vw;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  @keyframes zoomInBanner {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
-  }
+    @keyframes zoomInBanner {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
   </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
-  <!-- 🔹 Hero con banner responsive -->
-<header class="relative min-h-screen md:h-screen overflow-hidden flex items-center">
-  <picture class="absolute inset-0">
-    <!-- Imagen vertical para mobile -->
-    <source media="(max-width: 767px)" srcset="img/banner-vertical.jpg">
-    <!-- Imagen horizontal para desktop -->
-    <img
-      src="img/banner-horizontal.jpg"
-      alt="Traslado de vehículo"
-      class="w-full h-full object-cover animate-[zoomInBanner_15s_ease-in-out_infinite_alternate]"
-    >
-  </picture>
+<body class="bg-gray-50 font-[Inter,sans-serif] text-[#565656] overflow-x-hidden">
 
-  <!-- Capa superpuesta -->
-  <div class="relative w-full bg-black/40 flex flex-col items-center justify-center text-center px-4 py-28 md:py-20">
-    <div
-      class="bg-black/40 backdrop-blur-md p-6 md:p-10 rounded-2xl shadow-xl max-w-3xl mx-auto"
-      data-aos="fade-up"
-    >
-      <!-- Logo -->
-      <div data-aos="fade-up" data-aos-delay="100" class="flex justify-center mb-6">
-        <img 
-          src="img/logo.png" 
-          alt="Logo" 
-          class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
-        >
-      </div>
+  <!-- 🌟 HEADER -->
+  <header class="relative min-h-screen md:h-screen overflow-hidden flex items-center">
+    <picture class="absolute inset-0">
+      <source media="(max-width: 767px)" srcset="img/banner-vertical.jpg">
+      <img
+        src="img/banner-horizontal.jpg"
+        alt="Traslado de vehículo"
+        class="w-full h-full object-cover animate-[zoomInBanner_20s_ease-in-out_infinite_alternate]"
+      >
+    </picture>
 
-      <!-- Título -->
-      <h1 data-aos="fade-up" data-aos-delay="200"
-        class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-        Tu auto se traslada, vos <strong class="text-yellow-600">seguís con tu día</strong>
-      </h1>
+    <div class="relative w-full bg-black/50 flex flex-col items-center justify-center text-center px-4 py-28 md:py-20">
+      <div class="bg-black/40 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-2xl max-w-3xl mx-auto" data-aos="fade-up">
+        <img src="img/logo.png" alt="Logo Servigo" class="h-16 md:h-20 w-auto mx-auto mb-6 transition-transform duration-500 hover:scale-105" data-aos="fade-down">
 
-      <!-- Descripción -->
-      <p data-aos="fade-up" data-aos-delay="400"
-        class="text-lg md:text-xl text-white mb-8">
-        Coordinamos el retiro, llevamos tu vehículo al taller y te lo devolvemos, sin que tengas que moverte.
-      </p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight" data-aos="fade-up" data-aos-delay="150">
+          Tu auto se traslada, vos <span class="text-[#f29101]">seguís con tu día</span>
+        </h1>
 
-      <!-- Botones -->
-      <div data-aos="fade-up" data-aos-delay="600"
-        class="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="URL_TURNO_BATERIA"
-          class="bg-yellow-600 text-white px-6 py-3 rounded font-semibold transition-all duration-300 hover:bg-yellow-500 hover:scale-105 hover:shadow-lg">
-          Batería
-        </a>
-        <a href="URL_TURNO_ACEITE"
-          class="bg-yellow-600 text-white px-6 py-3 rounded font-semibold transition-all duration-300 hover:bg-yellow-500 hover:scale-105 hover:shadow-lg">
-          Cambio de aceite
-        </a>
-        <a href="URL_TURNO_FRENOS"
-          class="bg-yellow-600 text-white px-6 py-3 rounded font-semibold transition-all duration-300 hover:bg-yellow-500 hover:scale-105 hover:shadow-lg">
-          Frenos
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-
-
-  <!-- Sección ahorro de tiempo y estrés -->
-<section class="py-24 bg-yellow-500">
-  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-    <!-- Imagen -->
-    <div class="md:w-1/2" data-aos="fade-right">
-      <img src="img/embotellamiento.jpg" alt="Tráfico y embotellamiento" class="rounded-3xl shadow-xl">
-    </div>
-
-    <!-- Texto -->
-    <div class="md:w-1/2 flex flex-col gap-6" data-aos="fade-left">
-      <h2 class="text-4xl font-bold mb-6">Olvidate del tráfico, del taller y del clima</h2>
-      <p class="text-lg  mb-4">
-        Con nuestro servicio, vos no tenés que preocuparte por:
-      </p>
-      <ul class="space-y-3 text-gray-700 text-lg">
-        <li class="flex items-start gap-3">
-          <span class="text-green-600 mt-1">✔</span>
-          Perder tiempo en embotellamientos y tráfico pesado.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-600 mt-1">✔</span>
-          Coordinar horarios y esperas en el taller.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-600 mt-1">✔</span>
-          Lidiar con lluvia, calor, frío o mal clima mientras tu auto está en mantenimiento.
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-green-600 mt-1">✔</span>
-          Sacar tiempo de tu agenda para mover tu auto de un lugar a otro.
-        </li>
-      </ul>
-     <div class="flex flex-col md:flex-row gap-4">
-        <a href="#turnos" class="bg-yellow-600 text-white px-6 py-3 rounded font-semibold hover:bg-yellow-600">Solicita tu turno</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Cómo funciona - Timeline animado con scroll -->
-<section class="py-24 bg-blue-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-16">Cómo funciona</h2>
-
-    <!-- Desktop Timeline -->
-    <div class="relative hidden md:flex justify-between items-center">
-      <!-- Línea horizontal -->
-      <div class="absolute top-1/2 left-0 w-full h-1 bg-blue-200 -z-10"></div>
-
-      <!-- Paso 1 -->
-      <div class="flex flex-col items-center z-10" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-blue-600 text-white rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Reservá tu turno</h3>
-        <p class="text-sm text-center max-w-xs">Elegí el servicio que necesitas y coordiná tu horario fácilmente.</p>
-      </div>
-
-      <!-- Paso 2 -->
-      <div class="flex flex-col items-center z-10" data-aos="fade-up" data-aos-delay="400">
-        <div class="bg-yellow-500 text-white rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Retiro en tu domicilio</h3>
-        <p class="text-sm text-center max-w-xs">Pasamos a buscar tu vehículo donde nos indiques, sin que tengas que moverte.</p>
-      </div>
-
-      <!-- Paso 3 -->
-      <div class="flex flex-col items-center z-10" data-aos="fade-up" data-aos-delay="600">
-        <div class="bg-green-500 text-white rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M3 14h18M3 18h18"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Traslado al taller</h3>
-        <p class="text-sm text-center max-w-xs">Llevamos tu auto al taller seleccionado para que realicen el servicio.</p>
-      </div>
-
-      <!-- Paso 4 -->
-      <div class="flex flex-col items-center z-10" data-aos="fade-up" data-aos-delay="800">
-        <div class="bg-pink-500 text-white rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Esperamos el mantenimiento</h3>
-        <p class="text-sm text-center max-w-xs">Vos seguís con tus actividades mientras tu auto está en el taller.</p>
-      </div>
-
-      <!-- Paso 5 -->
-      <div class="flex flex-col items-center z-10" data-aos="fade-up" data-aos-delay="1000">
-        <div class="bg-purple-600 text-white rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 5v6"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Devolución a tu domicilio</h3>
-        <p class="text-sm text-center max-w-xs">Te entregamos el vehículo listo para usar, directamente en tu hogar.</p>
-      </div>
-    </div>
-
-    <!-- Mobile Timeline -->
-    <div class="md:hidden flex flex-col gap-12 items-center">
-      <!-- Paso 1 -->
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-xs" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Reservá tu turno</h3>
-        <p class="text-sm text-center">Elegí el servicio que necesitas y coordiná tu horario fácilmente.</p>
-      </div>
-
-      <!-- Paso 2 -->
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-xs" data-aos="fade-up" data-aos-delay="400">
-        <div class="bg-yellow-500 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Retiro en tu domicilio</h3>
-        <p class="text-sm text-center">Pasamos a buscar tu vehículo donde nos indiques.</p>
-      </div>
-
-      <!-- Paso 3 -->
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-xs" data-aos="fade-up" data-aos-delay="600">
-        <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M3 14h18M3 18h18"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Traslado al taller</h3>
-        <p class="text-sm text-center">Llevamos tu auto al taller seleccionado para que realicen el servicio.</p>
-      </div>
-
-      <!-- Paso 4 -->
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-xs" data-aos="fade-up" data-aos-delay="800">
-        <div class="bg-pink-500 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Esperamos el mantenimiento</h3>
-        <p class="text-sm text-center">Vos seguís con tus actividades mientras tu auto está en el taller.</p>
-      </div>
-
-      <!-- Paso 5 -->
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-xs" data-aos="fade-up" data-aos-delay="1000">
-        <div class="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 5v6"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-lg mb-2">Devolución a tu domicilio</h3>
-        <p class="text-sm text-center">Te entregamos el vehículo listo para usar, directamente en tu hogar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Incluir AOS al final del body -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true
-  });
-</script>
-
-
-
-
-
-<section class="py-24 bg-yellow-500">
-  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-    <div class="md:w-1/2" data-aos="fade-right">
-      <img src="img/porque-elegirnos.jpg" alt="Servicio de traslado de autos" class="rounded-3xl shadow-xl">
-    </div>
-    <div class="md:w-1/2 flex flex-col gap-6" data-aos="fade-left">
-      <h2 class="text-4xl font-bold mb-6">Por qué elegirnos</h2>
-      <ul class="space-y-4 text-gray-700 text-lg">
-        <li class="flex items-start gap-4">
-          <span class="text-green-600 mt-1">✔</span>
-          Coordinamos todo el proceso, de tu domicilio al taller y de vuelta.
-        </li>
-        <li class="flex items-start gap-4">
-          <span class="text-green-600 mt-1">✔</span>
-          Servicio rápido, confiable y sin complicaciones.
-        </li>
-        <li class="flex items-start gap-4">
-          <span class="text-green-600 mt-1">✔</span>
-          Tu auto en manos seguras y personal capacitado.
-        </li>
-        <li class="flex items-start gap-4">
-          <span class="text-green-600 mt-1">✔</span>
-          Ahorro de tiempo: vos seguís con tus actividades mientras trabajamos por vos.
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- Satisfacción garantizada -->
-<section class="py-24 bg-gradient-to-r from-orange-100 to-gray-200">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Satisfacción garantizada</h2>
-    <p class="text-lg text-gray-700 mb-12" data-aos="fade-up" data-aos-delay="200">
-      Nos comprometemos a que tu experiencia sea rápida, segura y sin complicaciones.  
-      Si no quedás satisfecho, trabajamos para solucionarlo de inmediato.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Garantía 1 -->
-      <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-        <div class="bg-orange-600 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-xl mb-2">100% Confiable</h3>
-        <p class="text-sm text-gray-600">Coordinamos todo con total transparencia y profesionalismo.</p>
-      </div>
-
-      <!-- Garantía 2 -->
-      <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
-        <div class="bg-orange-500 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-xl mb-2">Servicio rápido</h3>
-        <p class="text-sm text-gray-600">Retiro, mantenimiento y entrega en tiempo récord, sin que pierdas tiempo.</p>
-      </div>
-
-      <!-- Garantía 3 -->
-      <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="800">
-        <div class="bg-orange-700 text-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-          </svg>
-        </div>
-        <h3 class="font-semibold text-xl mb-2">Tranquilidad total</h3>
-        <p class="text-sm text-gray-600">Tu vehículo está seguro y cuidado en todo momento. Garantía de satisfacción incluida.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Testimonios -->
-<section class="py-24 bg-yellow-500">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-16">Testimonios</h2>
-
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Testimonio 1 -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col md:flex-row items-center md:items-start gap-6 transform transition-transform duration-300 hover:-translate-y-2" data-aos="fade-right" data-aos-delay="200">
-        <img src="img/cliente1.jpg" alt="Cliente 1" class="w-20 h-20 rounded-full object-cover">
-        <div>
-          <p class="italic text-gray-700 mb-2">"Excelente servicio, me ahorró muchísimo tiempo y mi auto quedó perfecto. Muy recomendable!"</p>
-          <h4 class="font-semibold">Juan P.</h4>
-        </div>
-      </div>
-
-      <!-- Testimonio 2 -->
-      <div class="bg-white rounded-3xl shadow-xl p-8 flex flex-col md:flex-row items-center md:items-start gap-6 transform transition-transform duration-300 hover:-translate-y-2" data-aos="fade-left" data-aos-delay="400">
-        <img src="img/cliente2.jpg" alt="Cliente 2" class="w-20 h-20 rounded-full object-cover">
-        <div>
-          <p class="italic text-gray-700 mb-2">"Muy profesional y rápido. Me retiraron y entregaron el vehículo sin complicaciones."</p>
-          <h4 class="font-semibold">María G.</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sección de turnos mejorada y uniforme -->
-<section class="py-24 bg-gray-50">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">Agenda tu turno</h2>
-    <p class="text-lg text-gray-700 mb-16" data-aos="fade-up" data-aos-delay="200">
-      Seleccioná el servicio que necesitás y coordiná tu turno en pocos pasos.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Card Aceite -->
-      <div class="flex flex-col items-center bg-white rounded-3xl shadow-xl p-6 transform transition-transform duration-300 hover:-translate-y-2 flex-1" data-aos="fade-up" data-aos-delay="300">
-        <img src="img/lub.png" alt="Cambio de aceite" class="w-full h-48 object-cover rounded-2xl mb-4">
-        <h3 class="font-semibold text-xl mb-2">Cambio de aceite</h3>
-        <p class="text-gray-600 mb-4 flex-1">
-          Retiro y entrega de tu vehículo, realizamos el cambio de aceite sin que pierdas tiempo.
+        <p class="text-lg md:text-xl text-white/90 mb-8" data-aos="fade-up" data-aos-delay="300">
+          Coordinamos el retiro, llevamos tu vehículo al taller y te lo devolvemos, sin que tengas que moverte.
         </p>
-        <a href="ENLACE_CALENDLY_ACEITE" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
-          Reservar turno
-        </a>
-      </div>
 
-      <!-- Card Frenos -->
-      <div class="flex flex-col items-center bg-white rounded-3xl shadow-xl p-6 transform transition-transform duration-300 hover:-translate-y-2 flex-1" data-aos="fade-up" data-aos-delay="500">
-        <img src="img/freno.png" alt="Control de frenos" class="w-full h-48 object-cover rounded-2xl mb-4">
-        <h3 class="font-semibold text-xl mb-2">Control y mantenimiento de frenos</h3>
-        <p class="text-gray-600 mb-4 flex-1">
-          Nos encargamos del control completo de tus frenos mientras vos seguís con tu día.
-        </p>
-        <a href="ENLACE_CALENDLY_FRENOS" target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
-          Reservar turno
-        </a>
-      </div>
-
-      <!-- Card Batería -->
-      <div class="flex flex-col items-center bg-white rounded-3xl shadow-xl p-6 transform transition-transform duration-300 hover:-translate-y-2 flex-1" data-aos="fade-up" data-aos-delay="700">
-        <img src="img/bat.png" alt="Reemplazo / control de batería" class="w-full h-48 object-cover rounded-2xl mb-4">
-        <h3 class="font-semibold text-xl mb-2">Reemplazo / control de batería</h3>
-        <p class="text-gray-600 mb-4 flex-1">
-          Nos ocupamos de que tu batería esté en perfecto estado sin que tengas que moverte.
-        </p>
-        <a href="ENLACE_CALENDLY_BATERIA" target="_blank" class="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-colors">
-          Reservar turno
-        </a>
+        <div class="flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="450">
+          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Batería</a>
+          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Cambio de aceite</a>
+          <a href="#" class="bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Frenos</a>
+        </div>
       </div>
     </div>
+  </header>
 
-    <!-- Botón WhatsApp -->
-    <div class="mt-12" data-aos="fade-up" data-aos-delay="900">
-      <a href="https://wa.me/5492615985233?text=Quiero%20consulta%20por%20otros%20servicios%20de%20traslado%20de%20vehículos" target="_blank" class="bg-green-600 text-white px-8 py-4 rounded-full shadow-lg font-semibold hover:bg-green-700 transition-colors">
-        Consulta por otros servicios
-      </a>
+  <!-- 🚗 SECCIÓN SERVICIO -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <img src="img/porque-elegirnos.jpg" alt="Servicio de traslado" class="rounded-3xl shadow-2xl">
+      </div>
+
+      <div class="md:w-1/2 space-y-6" data-aos="fade-left">
+        <h2 class="text-4xl font-bold text-[#f29101]">¿Por qué elegir Servigo?</h2>
+        <p class="text-lg leading-relaxed text-[#565656]/90">
+          Nos ocupamos de todo el proceso: retiro, traslado, entrega y comunicación con el taller.  
+          Así, vos ganás tiempo y tranquilidad.
+        </p>
+        <ul class="space-y-3 text-lg">
+          <li class="flex items-start gap-3"><span class="text-[#f29101] mt-1">✔</span> Conductores profesionales y asegurados.</li>
+          <li class="flex items-start gap-3"><span class="text-[#f29101] mt-1">✔</span> Seguimiento del traslado en tiempo real.</li>
+          <li class="flex items-start gap-3"><span class="text-[#f29101] mt-1">✔</span> Comunicación directa y transparente.</li>
+        </ul>
+        <a href="#turnos" class="inline-block bg-[#f29101] text-white px-8 py-3 rounded-lg font-semibold mt-6 transition-all duration-300 hover:bg-[#d88000] hover:scale-105">Solicitá tu turno</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- 🔁 PASOS -->
+  <section class="py-24 bg-[#f8f8f8]">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-[#565656] mb-16">Cómo funciona</h2>
 
+      <div class="grid md:grid-cols-5 gap-10">
+        <div data-aos="zoom-in" data-aos-delay="100">
+          <div class="bg-[#f29101] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">1</div>
+          <p>Reservá tu turno online</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="200">
+          <div class="bg-[#f29101] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">2</div>
+          <p>Pasamos a retirar tu auto</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300">
+          <div class="bg-[#f29101] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">3</div>
+          <p>Lo llevamos al taller</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="400">
+          <div class="bg-[#f29101] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">4</div>
+          <p>Supervisamos el servicio</p>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="500">
+          <div class="bg-[#f29101] text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg">5</div>
+          <p>Te lo devolvemos en tu domicilio</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- 💬 TESTIMONIOS -->
+  <section class="py-24 bg-[#565656] text-white">
+    <div class="container mx-auto px-6 text-center max-w-5xl">
+      <h2 class="text-4xl font-bold mb-12 text-[#f29101]">Lo que dicen nuestros clientes</h2>
 
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/10 p-6 rounded-2xl shadow-lg" data-aos="fade-up">
+          <p class="italic">“Excelente servicio, puntualidad y comunicación constante. ¡Muy recomendable!”</p>
+          <h4 class="mt-4 font-semibold text-[#f29101]">— Javier M.</h4>
+        </div>
+        <div class="bg-white/10 p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <p class="italic">“Me ahorraron horas en el taller. Todo fue súper cómodo y profesional.”</p>
+          <h4 class="mt-4 font-semibold text-[#f29101]">— Carolina P.</h4>
+        </div>
+        <div class="bg-white/10 p-6 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="400">
+          <p class="italic">“Un servicio distinto, moderno y eficiente. Los recomiendo sin dudar.”</p>
+          <h4 class="mt-4 font-semibold text-[#f29101]">— Diego L.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
-    © 2025 Tu Servicio de Traslado de Vehículos. Todos los derechos reservados.
+  <!-- 📅 TURNOS -->
+  <section id="turnos" class="py-24 bg-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-[#f29101] mb-10">Reservá tu turno con Servigo</h2>
+      <p class="text-lg text-[#565656]/80 mb-12">Elegí el servicio que necesitás y coordiná tu traslado en minutos.</p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="#" class="bg-[#f29101] text-white px-8 py-4 rounded-lg font-semibold shadow-md hover:bg-[#d88000] hover:scale-105 transition-all duration-300">Batería</a>
+        <a href="#" class="bg-[#f29101] text-white px-8 py-4 rounded-lg font-semibold shadow-md hover:bg-[#d88000] hover:scale-105 transition-all duration-300">Cambio de aceite</a>
+        <a href="#" class="bg-[#f29101] text-white px-8 py-4 rounded-lg font-semibold shadow-md hover:bg-[#d88000] hover:scale-105 transition-all duration-300">Frenos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚫ FOOTER -->
+  <footer class="bg-[#565656] text-white py-8 text-center text-sm">
+    © 2025 <strong>Servigo</strong>. Todos los derechos reservados.  
+    <br>Hecho con pasión y eficiencia 🚗
   </footer>
 
-  <!-- Script de AOS -->
-  <script>
-    AOS.init();
-  </script>
-
+  <script>AOS.init();</script>
 </body>
 </html>
